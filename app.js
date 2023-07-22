@@ -1,4 +1,4 @@
-const express = require('express'); //import d'express
+const express = require('express'); /*import d'express*/
 const mongoose = require("mongoose") //import du mongoose
 const dotenv = require('dotenv'); /*pour importer .env*/
 const cors = require('cors');
