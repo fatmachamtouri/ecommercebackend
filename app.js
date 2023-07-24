@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 mongoose.set("strictQuery", false);
 // Connexion à la base données
-mongoose.connect(process.env.DATABASE, { //accede au datatbase dans .env
+mongoose.connect(process.env.DATABASECLOUD, { //accede au datatbase dans .env
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
