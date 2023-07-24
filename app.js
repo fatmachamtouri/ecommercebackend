@@ -5,6 +5,8 @@ const cors = require('cors');
 const categorieRouter = require('./routes/categorie.route')
 const scategorieRouter = require('./routes/scategorie.route')
 const articleRouter = require('./routes/article.route')
+const paymentRouter = require( "./routes/payment.route.js")
+
 
 dotenv.config()
 const app = express();
@@ -14,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 mongoose.set("strictQuery", false);
 // Connexion à la base données
-mongoose.connect(process.env.DATABASECLOUD, { //accede au datatbase dans .env
+mongoose.connect(process.env.DATABASE, { //accede au datatbase dans .env
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -33,4 +35,5 @@ app.use("/api/articles", articleRouter)
 app.listen(process.env.PORT, () => {
     console.log(`Server is listening on port ${process.env.PORT}`);
 });
+app.use('/api/payment', paymentRouter);
  module.exports =app;
