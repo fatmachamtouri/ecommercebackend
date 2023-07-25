@@ -5,7 +5,7 @@ const cors = require('cors');
 const categorieRouter = require('./routes/categorie.route')
 const scategorieRouter = require('./routes/scategorie.route')
 const articleRouter = require('./routes/article.route')
-const paymentRouter = require( "./routes/categorie.route")
+const paymentRouter = require( "./routes/payment.route")
 
 
 dotenv.config()

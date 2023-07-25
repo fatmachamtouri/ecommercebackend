@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const stripe = require('stripe');
 const Stripe =
-    stripe('sk_test_51KtYRUD3HS4vNAwa7ANL32HQqRTywhV3JHWIp3BxAIHv04bWoz22aKlRs9Q1L6znSX2i5fu5i3Xkl9i2Goz7jAkC00LL0T3lTL');
+    stripe('sk_test_51NXUeJLatTBVvli346ZoBCOpmlgs2aIpsrb1RtyNLlLqGaYJE6jKI6ECMME2Iy3GDlplAb81OQf2T4Mp0RZFW0PG00TSql6w54');
 //dans stripe on ajoute notre sercret key
 router.post('/', async (req, res) => {
     console.log(req.body)
