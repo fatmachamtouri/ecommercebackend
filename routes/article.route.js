@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Article=require("../models/article")
-
+const {authorizeRoles} = require("../middleware/authorizeRoles")
+const {verifyToken} =require("../middleware/verify-token")
 // afficher la liste des articles.
 router.get('/', async (req, res )=> {
     try {
@@ -30,7 +31,7 @@ router.get('/productspage', async(req, res) => {
     }
     });
 // créer un nouvel article
-router.post('/', async (req, res) =>  {
+router.post('/',verifyToken,authorizeRoles("user","admin","visiteur"), async (req, res) =>  {
     
     const nouvarticle = new Article(req.body)
 
